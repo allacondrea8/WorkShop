@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Reservation</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit Reservation</h1>
+
+    <form th:action="@{/reservations/update/{id}(id=${reservation.id})}" th:object="${reservation}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        <div>
+            <label for="participantNom">Nom du participant:</label>
+            <input type="text" id="participantNom" th:field="*{participant.nom}" required />
+        </div>
+        
+        <div>
+            <label for="participantEmail">Email du participant:</label>
+            <input type="email" id="participantEmail" th:field="*{participant.email}" required />
+        </div>
+
+      <div>
+    <label for="atelier">Nom de l'atelier:</label>
+    <select id="atelier" th:field="*{atelier.id}" required>
+        <option value="1" th:selected="${reservation.atelier.id == 1}">Atelier de Céramique</option>
+        <option value="2" th:selected="${reservation.atelier.id == 2}">Atelier de Vitrail</option>
+    </select>
+</div>
+
+
+        <div>
+            <label for="dateTime">Date et Heure:</label>
+            <input type="datetime-local" id="dateTime" th:field="*{dateTime}" required />
+        </div>
+
+        <div>
+            <label for="statut">Statut:</label>
+            <select id="statut" th:field="*{statut}">
+                <option value="CONFIRMÉE">Confirmée</option>
+                <option value="ANNULÉE">Annulée</option>
+            </select>
+        </div>
+
+        <div>
+            <button type="submit">Update Reservation</button>
+        </div>
+    </form>
+
+    
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

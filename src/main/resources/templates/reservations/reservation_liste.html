@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des Réservations</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<div class="container">
+    <h1>Liste des Réservations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom de l'atelier</th>
+                <th>Nom du participant</th>
+                <th>Date et Heure</th>
+                <th>Statut</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="reservation : ${reservations}">
+                <td th:text="${reservation.atelier.nom}">Nom de l'atelier</td>
+                <td th:text="${reservation.participant.nom}">Nom du participant</td>
+                <td th:text="${reservation.dateTime}">Date et Heure</td>
+                <td th:text="${reservation.statut}">Statut</td>
+                <td>
+                    <a th:href="@{/reservations/edit/{id}(id=${reservation.id})}">Edit</a>
+                    |
+                    <a th:href="@{/reservations/delete/{id}(id=${reservation.id})}" th:onclick="'return confirm(\'Are you sure you want to delete this reservation?\');'">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+     <a th:href="@{/ateliers/list}"  class="btn-back">Retour à la liste des ateliers</a>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

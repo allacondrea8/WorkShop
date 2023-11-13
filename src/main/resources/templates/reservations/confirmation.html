@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Confirmation de Réservation</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<div class="container">
+    <h1>Confirmation de Réservation</h1>
+    
+    <div th:if="${reservation != null}">
+        <h2>Détails de la réservation</h2>
+   
+        <p><strong>Participant:</strong> <span th:text="${reservation.participant.nom}">Nom du participant</span></p>
+        <p><strong>Date et Heure:</strong> <span th:text="${reservation.dateTime}">Date et Heure</span></p>
+        <p><strong>Statut:</strong> <span th:text="${reservation.statut}">Statut de la réservation</span></p>
+        
+       <a th:href="@{/reservations/reservation_liste}" class="btn-back" >Retour à la liste des réservations</a>
+
+    </div>
+    
+    <div th:if="${reservation == null}">
+        <p>La réservation n'a pas pu être trouvée ou il y a eu une erreur dans le processus de réservation.</p>
+        <a href="/ateliers">Réessayer</a>
+    </div>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des Ateliers</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<div class="container">
+    <h1>Liste des Ateliers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="atelier : ${ateliers}">
+                <td th:text="${atelier.nom}">Nom de l'atelier</td>
+                <td th:text="${atelier.description}">Description</td>
+                <td>
+                    <a th:href="@{'/ateliers/reserver/' + ${atelier.id}}">Réserver</a>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+     <a th:href="@{/reservations/reservation_liste}" class="btn-back">Retour à la liste des réservations</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

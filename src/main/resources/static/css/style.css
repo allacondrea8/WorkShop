@@ -1,0 +1,225 @@
+/* style.css */
+body,
+html {
+	height: 100%;
+	margin: 0;
+	font-family: 'Arial', sans-serif;
+}
+body{
+	background:linear-gradient(0deg, #41afad 0%, #5d78b6 50%);
+	 display: flex;
+            justify-content: center;
+            align-items: center;
+	} 
+
+
+a.btn-back {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: rgb(52, 134, 169);
+  color: white;
+  text-decoration: none; /* Removes underline from links */
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.welcome {
+	
+	margin-bottom: 350px;
+  width: 100%;
+  padding: 2px 0;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative; /* This will help ensure it's at the top */
+  z-index: 1000; /* Ensures it's above other content */
+}
+
+.container {
+	position: relative;
+	padding: 50px;
+}
+
+/* Styling the button */
+.btn-primary {
+
+	text-decoration: none;
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: .5em;
+	border: solid .2em transparent;
+	padding: 1em 1.5em;
+	border-radius: 9em;
+	background:
+		linear-gradient(to right bottom, var(--slist)) border-box;
+	font: 700 1.5em/ 1.25 ubuntu, sans-serif;
+	text-transform: uppercase;
+
+	&::after {
+		content: attr(data-ico)
+	}
+
+}   
+.btn-primary:hover {
+            background-color: rgb(135, 182, 224);
+        }
+
+.btn-secondary {
+	
+text-decoration: none;
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: .5em;
+	border: solid .2em transparent;
+	padding: 1em 1.5em;
+	border-radius: 9em;
+	background:
+		linear-gradient(to right bottom, var(--slist)) border-box;
+	font: 700 1.5em/ 1.25 ubuntu, sans-serif;
+	text-transform: uppercase;
+
+	&::after {
+		content: attr(data-ico)
+	}
+
+}  
+
+.btn-secondary:hover {
+            background-color: rgb(135, 182, 224);
+        }
+
+
+/* Table styles */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+table {
+  width: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+th {
+  text-align: left;
+}
+
+thead {
+  th {
+    background-color: #55608f;
+  }
+}
+
+tbody {
+  tr {
+    &:hover {
+      background-color: rgba(255,255,255,0.3);
+    }
+  }
+  a:hover {
+    text-decoration: underline;
+}
+  td {
+    position: relative;
+    &:hover {
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -9999px;
+        bottom: -9999px;
+        background-color: rgba(255,255,255,0.2);
+        z-index: -1;
+      }
+    }
+  }
+}
+/* Header styles */
+h1 {
+	color: #fff;
+	text-align: center;
+}
+
+/* General form styles */
+form {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+input {
+  width: 100%;
+  padding: .75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+input[type="datetime-local"] {
+  padding: .5rem;
+}
+
+input[type="submit"],
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: .75rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #0056b3;
+}
+
+
+button[type="submit"] {
+  width: 100%; /* Full-width button */
+  padding: 10px; /* Some padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Add a mouse pointer on hover */
+}
+
+

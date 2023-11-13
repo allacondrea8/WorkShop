@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Workshop Index</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+   
+</head>
+<body>
+
+<div class="welcome">
+	<h1>Welcome to the Workshop Management System</h1>
+</div>
+    
+<div class="container">
+    <!-- Button to list all ateliers -->
+    <div>
+        <a th:href="@{/ateliers/list}" class="btn btn-primary">Show All Ateliers</a>
+    </div>
+
+    <!-- Button to list all reservations -->
+    <div>
+        <a th:href="@{/reservations/reservation_liste}" class="btn btn-secondary">Show All Reservations</a>
+    </div>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>
